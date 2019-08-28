@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../assets/css/layui.css"/>
+	</head>
+	<body>
+		<button class="layui-btn layui-btn-normal" style="width:100%">热词云</button>
+		<div class="mui-content" style="margin-left:0px;">
+			<div id="mainPage" style="height:400px;width:100%;align-content: center;"></div>
+		</div>
+		<button class="layui-btn layui-btn-normal" style="width:100%"></button>
+	</body>
+	<script src="../js/echarts.min.js"></script>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/echarts-wordcloud.min.js"></script>
+	<script type="text/javascript">
+		var myChart = echarts.init(document.getElementById('mainPage'));
+		myChart.showLoading();
+		init();
+		function init()
+		{
+			$.ajaxSetup
+			({
+				cache:false
+			});
+			$.ajax
+			({
+				type:'GET',
+				url:'http://39.96.30.153:8080/HotWord1/WordCloudServlet',
+				data:
+				{
+					method:'wordCloud'
+				},
+				success:function(json)
+				{
+					myChart.hideLoading();
+					myChart.setOption
+					({
+					    title: 
+					    {
+					        text: ''  
+					    },  
+					    tooltip: {},  
+					    series: 
+					    [{
+					        type : 'wordCloud',  //类型为字符云  
+					       	shape:'smooth',  //平滑  
+					        gridSize : 10, //网格尺寸  
+					        size : [300,500],  
+					        rotationRange : [ -40, 40 ], //旋转范围  
+					            textStyle : 
+					            {
+					                normal : 
+					                {
+					                    fontFamily:'sans-serif',  
+					                    color : function() {    
+					                        return 'rgb('    
+					                                + [ Math.round(Math.random() * 160),    
+					                                        Math.round(Math.random() * 160),    
+					                                        Math.round(Math.random() * 160) ]    
+					                                        .join(',') + ')';    
+					                    }    
+					                },    
+					                emphasis : {    
+					                    shadowBlur : 20,  //阴影距离  
+					                    shadowColor : '#ffffff'  //阴影颜色  
+					                }    
+					            },  
+					            data:json.data,  
+					    }]  
+					});  
+					window.onresize = myChart.resize();
+				},
+				error:function(dt){
+					alert('热词云出现错误！');
+				},
+				dataType:'json'
+			});
+		}
+</script>
+</html>

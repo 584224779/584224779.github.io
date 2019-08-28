@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../assets/css/layui.css">
+    <link rel="stylesheet" href="../assets/css/view.css"/>
+    <title></title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="./js/echarts.min.js" ></script>
+		<script type="text/javascript">
+			function ajaxFun(){
+			    $.ajax({
+			        type: "POST",
+			        url: "http://39.96.30.153:8080/HotWord1/nodeservlet",
+			        data: $('#form').serialize(),
+			        success: function(map){
+			            var jsonobj=eval('('+map+')')
+			            //这个是给文本框设值的代码    $("#a").val(jsonobj);
+			          	document.getElementById("mainContent").style.display="block";
+			        	document.getElementById("news").style.display="block";
+			            document.getElementById("key").innerHTML="关键词： "+jsonobj.word;//这个是给空白的p标签设值值得代码
+			            document.getElementById("content").innerHTML="  "+jsonobj.source+"...";
+			            document.getElementById("new1").innerHTML="https://baike.baidu.com/item/"+jsonobj.word;
+			        	document.getElementById("a1").href="https://baike.baidu.com/item/"+jsonobj.word;
+			        }
+			    })
+			}
+		</script>
+		<style>
+			#x{
+				color:blue;
+			}
+		</style>
+</head>
+<body class="layui-view-body">
+    <div class="layui-content">
+        <div class="layui-row layui-col-space20">
+            <div class="layui-col-sm6 layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-body chart-card">
+                        <div class="chart-header">
+                            <div class="metawrap">
+                                <div class="meta">
+                                    <span style="color:blue;font-size:20px;">热词分析</span>
+                                </div>
+                                <hr />
+                                <form class="mui-input-group" id="form">
+									<div class="mui-input-row">
+										<label  class="layui-form-label" style="font-size:15px;">热词：</label>
+										<div class="layui-input-block">
+											<input type="text" name="txt1" required  lay-verify="required" class="layui-input" id="txt1" placeholder="搜索···">
+										</div>
+									</div>
+								</form>
+                            </div>
+                        </div>
+                        <div class="chart-footer">
+                            <div class="field">
+                                <div>
+									<div class="mui-button-row">
+										<button type="button" style="margin-left:35%;" onclick="ajaxFun()"  class="layui-btn layui-btn-blue" >立即搜索</button>&nbsp;&nbsp;
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3" id="mainContent" style="display: none;">
+                <div class="layui-card">
+                    <div class="layui-card-body chart-card">
+                        <div class="chart-header">
+                            <div class="metawrap">
+                                <div class="meta">
+                                    <h3><span id="key" style="color:blue;"></span>
+                                </div>
+                                <hr  />
+                                <div>
+                                	<p><span id="content"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-footer">
+                            <div class="field">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm12 layui-col-md12" id="news" style="display:none;">
+                <div class="layui-card">
+                    <div class="layui-tab layui-tab-brief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">相关新闻链接</li>
+                            <li>手动分类</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+								<a id="a1"><span id="new1"></a>		
+                           </div>
+                           <div class="layui-tab-item">
+                                <button class="layui-btn layui-btn-danger" onclick="change1()"   style="width:24%;margin-left:0px;padding-left: 10px;">编程语言</button>
+                                <button class="layui-btn" onclick="change2()"  style="width:24%;margin-left:0px;padding-left: 10px;">风云人物</button>
+                                <button class="layui-btn layui-btn-normal" onclick="change3()"  style="width:24%;margin-left:0px;padding-left: 10px;">技术相关</button>
+                                <button class="layui-btn layui-btn-warm" onclick="change4()"  style="width:24%;margin-left:0px;padding-left: 10px;">其他</button>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/layui.all.js"></script>
+    <script>
+     var element = layui.element;
+    </script>
+</body>
+</html>
+<script type="text/javascript">
+			function change1()
+			{
+			    $.ajax({
+			        type: "GET",
+			        url: "http://39.96.30.153:8080/HotWord1/changeservlet",
+			        data: 
+			        {
+			        	name:$('#txt1').val(),
+			        	changetype:'1'
+			        },
+			        success: function(map)
+			        {
+			           alert("已添加到‘编程语言’分类当中！");
+			        }
+			    })
+			}
+		</script>
+		<script type="text/javascript">
+			function change2()
+			{
+			    $.ajax({
+			        type: "GET",
+			        url: "http://39.96.30.153:8080/HotWord1/changeservlet",
+			        data: 
+			        {
+			        	name:$('#txt1').val(),
+			        	changetype:'2'
+			        },
+			        success: function(map)
+			        {
+			           alert("已添加到‘风云人物’分类当中！");
+			        }
+			    })
+			}
+		</script>
+		<script type="text/javascript">
+			function change3()
+			{
+			    $.ajax({
+			        type: "GET",
+			        url: "http://39.96.30.153:8080/HotWord1/changeservlet",
+			        data: 
+			        {
+			        	name:$('#txt1').val(),
+			        	changetype:'3'
+			        },
+			        success: function(map)
+			        {
+			           alert("已添加到‘技术相关’分类当中！");
+			        }
+			    })
+			}
+		</script>
+		<script type="text/javascript">
+			function change4()
+			{
+			    $.ajax({
+			        type: "GET",
+			        url: "http://39.96.30.153:8080/HotWord1/changeservlet",
+			        data: 
+			        {
+			        	name:$('#txt1').val(),
+			        	changetype:'4'
+			        },
+			        success: function(map)
+			        {
+			           alert("已添加到‘其他’分类当中！");
+			        }
+			    })
+			}
+		</script>

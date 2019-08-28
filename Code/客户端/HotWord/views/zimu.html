@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<link rel="stylesheet" href="../assets/css/layui.css">
+    	<link rel="stylesheet" href="../assets/css/admin.css">
+	</head>
+	<body onload="init()">
+	
+		
+	<!-- body里的onload方法，开局引用init() -->
+	<!-- 写好A~Z26个下拉菜单的第一层，内层使用ajax动态添加-->
+	
+	
+		<button class="layui-btn layui-btn-normal" style="width:100%">首字母索引</button>
+		<div class="layui-collapse" lay-accordion="">
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">A<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content layui-show" id="inside1">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">B<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside2">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">C<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside3">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">D<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside4">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">E<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside5">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">F<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside6">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">G<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside7">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">H<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside8">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">I<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside9">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">J<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside10">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">K<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside11">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">L<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside12">
+                    
+               	</div>
+            </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">M<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside13">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">N<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside14">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">O<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside15">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">P<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside16">
+                    
+               	</div>
+            </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Q<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside17">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">R<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside18">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">S<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside19">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">T<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside20">
+                    
+               	</div>
+            </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">U<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside21">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">V<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside22">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">W<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside23">
+                    
+                </div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">X<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside24">
+                    
+               	</div>
+            </div>
+              <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Y<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside25">
+                    
+               	</div>
+            </div>
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">Z<i class="layui-icon layui-colla-icon"></i></h2>
+                <div class="layui-colla-content" id="inside26">
+                    
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
+<script src="../assets/layui.all.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function init()
+		{
+			$.ajax
+			({
+				type:'GET',
+				url:'http://39.96.30.153:8080/HotWord1/shouzimuservlet',//服务器的servlet地址
+				data:
+				{
+					method:'shouzimu'//对应服务器端method接受的发送请求
+				},
+				success:function(data)
+				{
+					var j;
+					//循环遍历
+					for(j=65;j<91;j++)//65~91是阿斯卡码表里A~Z，在下面就把数据变成字母来进行和数据首字母的比对
+					{
+						var str=String.fromCharCode(j);//将循环的数据变成字符
+						var inside = document.getElementById('inside'+(j-64)); //获取页面写好的标签 
+						var html = '';
+						var i;
+						for(i=0;i<data.length;i++)
+						{
+							if(str==data[i].zimu)//如果数据的首字母和当前字母一样，用html动态添加
+							{
+                				 //定义html
+                    			html += '<p><a href="https://baike.baidu.com/item/'+data[i].name+'">'+data[i].name+'</a></p><hr />';  
+                				
+							}
+							
+						}
+						inside.innerHTML = html;//添加显示
+					}
+				},
+				error:function(error)
+				{
+					console.log('出现错误！')//
+				},
+				dataType:'json'//数据类型为json
+			});
+		}
+</script>

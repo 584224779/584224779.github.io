@@ -1,0 +1,67 @@
+{
+  "views/search.html": {
+    "href": "views/search.html",
+    "resources": [
+      "assets/css/layui.css",
+      "assets/css/view.css",
+      "js/jquery-3.3.1.min.js",
+      "assets/layui.all.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "views/zifuyun.html": {
+    "href": "views/zifuyun.html",
+    "resources": [
+      "js/echarts.min.js",
+      "js/jquery-3.3.1.min.js",
+      "js/echarts-wordcloud.min.js",
+      "css/mui.min.css",
+      "assets/css/layui.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "views/guanxi.html": {
+    "href": "views/guanxi.html",
+    "resources": [
+      "js/echarts.min.js",
+      "css/mui.min.css",
+      "css/app.css",
+      "js/jquery-3.3.1.min.js",
+      "assets/css/layui.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "views/zimu.html": {
+    "href": "views/zimu.html",
+    "resources": [
+      "assets/layui.all.js",
+      "js/jquery-3.3.1.min.js",
+      "css/mui.min.css",
+      "css/app.css",
+      "assets/css/layui.css",
+      "assets/css/admin.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "assets/css/layui.css",
+      "assets/css/admin.css",
+      "assets/layui.js",
+      "index.js",
+      "assets/images/logo.png"
+    ],
+    "refer": [
+      "views/search.html",
+      "views/zifuyun.html",
+      "views/guanxi.html",
+      "views/zimu.html"
+    ],
+    "priority": 0
+  }
+}
