@@ -1,0 +1,65 @@
+﻿<p><strong>一、鸿蒙OS开源发布</strong></p>
+<p>　　8月9日，华为在本次大会上发布了基于微内核的全场景分布式操作系统鸿蒙OS，并宣布鸿蒙OS将对全球开发者<strong>开源</strong>。同时，华为<strong>全面开放HMS</strong>，使全球开发者可以快速接入HMS生态，实现<strong>生态共享</strong>。</p>
+<p>　　华为消费者业务CEO余承东说，&ldquo;鸿蒙OS联接了万物，选择鸿蒙就是选择未来。华为长期致力于包括芯片和OS在内的底层技术创新，把复杂留给自己，把简单留给开发者&rdquo;。</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/1198161/201908/1198161-20190810163742990-1011294196.png" alt="" /></p>
+<p>　　鸿蒙OS可以灵活适配各个终端场景，甚至可以跨平台调用硬件，所有硬件互为外设，这里面想象空间很大。简而言之，未来不再是一个个割裂的硬件，割裂的硬件系统，而是一个系统横跨多个硬件，数据无缝衔接，互相调用各个终端的设备。</p>
+<p>&nbsp;　　<strong>（1）、余承东介绍的鸿蒙os的技术特性：</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #800080;">1</span><span style="color: #000000;">、分布式架构首次用于终端OS，实现跨终端无缝协同体验。
+</span><span style="color: #800080;">2</span><span style="color: #000000;">、确定时延引擎和高性能IPC技术实现系统流畅。
+</span><span style="color: #800080;">3</span><span style="color: #000000;">、基于微内核架构重塑终端设备可信安全。
+</span><span style="color: #800080;">4</span>、通过统一IDE支撑一次开发，多端部署，实现跨终端生态共享。</pre>
+</div>
+<p><strong>　　（2）、鸿蒙OS主要面向：</strong></p>
+<p><strong>　　</strong>IoT设备（穿戴、大屏、车机等），并随时可用到手机上，考虑到生态原因优先使用Android生态，<span style="color: #0000ff;"><strong>从Android系统迁移到鸿蒙生态非常便捷，只需要1到2天</strong>。</span></p>
+<p><strong>　　（3）、安全级别</strong></p>
+<p><strong>　　</strong>可实现跨终端无缝协同体验，安全级别能达到5和5+，是<strong><span style="color: #0000ff;">最高级别的安全OS</span>。</strong></p>
+<p><strong>　　（4）、权限分割</strong></p>
+<p><strong>　　</strong>鸿蒙中将权限分割成不同的子权限，没有Root权限，<span style="color: #0000ff;"><strong>避免了以往一旦取得Root即获得全部权限的恶意进攻手段</strong></span>。</p>
+<p><strong>　　（5）、兼容性：</strong></p>
+<p><strong>　　<span style="color: #0000ff;">Linux、Unix和Android系统</span></strong></p>
+<p><strong>二、鸿蒙OS两大核心</strong></p>
+<p>　　<strong>1、微内核</strong></p>
+<div>
+<p>　　<strong>（1）、微内核与宏内核的区别：</strong></p>
+<p>　　<span style="color: #0000ff;">宏内核：</span>把所有系统服务都放到内核里，包括文件系统、设备驱动等，安卓系统就是其中代表。但宏内核有着无法调和的矛盾，那就是随着操作系统越来越复杂，内核里面的东西也越来越多。易产生操心系统代码量庞大，漏洞无法避免和大量服务、硬件驱动都在内核中，导致操作系统可扩展性差这两个问题</p>
+<p>　　<span style="color: #0000ff;">微内核：</span>核心思想是简化内核，使内核成为一个只提供最基础的系统服务的东西，其他统统都放在内核之外。比如内核中只保留多进程调度、多进程通信等服务。其他系统服务甚至外设驱动都放在了用户态中来实现。</p>
+<p>　<strong>　（2）、微内核优势：</strong></p>
+<p>　　<span style="color: #0000ff;">高安全性、高可靠、高扩展性、高可维护性、支持分布式计算。</span></p>
+<p><span style="color: #0000ff;">　　<span style="color: #000000;"><strong>2、方舟编译器</strong></span></span></p>
+<p>　　安卓绝大多数应用是使用 Java 语言写的，但CPU 只能理解汇编指令，因此需要一个虚拟机来把Java 高级语言转换成机器能懂的语言，然而<strong>VM 的存在会导致程序运行变慢甚至卡顿</strong>。</p>
+<div>
+<div>
+<p>　　<strong>（1）、华为编译器最大的优势：</strong></p>
+<p>　　通过方舟编译器，开发者的应用在下载之前就已经转化成为机器可以识别的代码，因而可以在手机上快速安装、启动和运行，而无需再经过 VM 的编译。</p>
+<p>　　某种程度上，方舟编译器是<strong>将编译过程提前到应用开发阶段</strong>，从而大幅度减少了智能手机和操作系统的运行负担。</p>
+</div>
+<strong>三、快应用</strong></div>
+<div><strong>　　</strong>9月份开始，华为将在全球上线快应用，将中国市场已经成熟运行的快应用标准向全球开发者开放，带来<strong><span style="color: #0000ff;">无需安装、即点即用</span></strong>的快捷交互体验。华为快服务智慧平台目前已在中国市场上架快服务5000多个。</div>
+<div>　　12月，华为快服务智慧平台将正式全球上线，实现快服务的全球原子化智慧分发。</div>
+<div><strong>四、开放支持，共建生态</strong></div>
+<div>　　HMS可帮助开发者专注创新，实现一<strong><span style="color: #0000ff;">点接入、全球全场景全终端智慧分发</span></strong>。在本次大会上，华为宣布面向全球开放HMS Core 14项能力、51项服务和885个API，与开发者共筑全场景智慧新生态。</div>
+<div>　　目前，接入HMS Core的应用已超4.3万款。
+<p>　　华为还正式面向全球发布App Gallery Connect服务，覆盖&ldquo;<span style="color: #0000ff;"><strong>创意&mdash;开发&mdash;分发&mdash;运营&mdash;分析</strong></span>&rdquo;全流程服务，助力开发者全流程高效运营。同时，&ldquo;耀星计划&rdquo;全面升级，激励资源从10亿元人民币增至10亿美元，并从中国市场全面推向全球开发者，与业界领先的生态伙伴共建激励联盟，激励和扶持全球开发者创新。为帮助开发者的创意更好地在华为全场景设备上落地，华为将加大对开发者的支持力度，提供多样化的工具包，开放更多平台能力。</p>
+<p>　　<strong>移动芯片上，麒麟平台将开放三大能力：</strong></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">1、通过多媒体融合能力开放，麒麟平台可助力短视频应用开发者创意落地；
+
+2、融合感知能力开放，可让APP更聪明、更懂用户；
+
+3、AI计算能力开放，让普惠AI开发成为可能。</span></pre>
+</div>
+<p>　　为了加快非手机设备的智慧化发展，在不同场景下增强用户的使用体验，华为推出了HiLink &amp; LiteOS &amp; 芯片的三件套工具，从端云业务开放平台、操作系统到芯片，端到端解决IoT产业发展困局，让IoT开发更简单更高效。</p>
+<p>　　HiLink 开放平台实现了<strong>所有IoT设备自动发现、连接简单、一次接入、多端多模控制，最终获得多设备情景智能联动的极致体验</strong>。</p>
+<p>　　<strong>LiteOS是IoT硬件与应用的桥梁</strong>。独有的轻量化 IoT端侧开发编程框架Maple JS，运行性能接近C语言，让开发者无需精通嵌入式即可快速开发。HUAWEI LiteOS和凌霄、鸿鹄等海思全场景物联芯片的结合，将为开发者提供设备智能化的底层技术优化。</p>
+<p><strong>五、发展前景与挑战</strong></p>
+<p>　　操作系统行业有三大趋势：　</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;"><strong>1、开源吸引开发走向</strong></span><br /><br /><span style="color: #0000ff;"><strong>2、软硬件平台一体化</strong></span><br /><br /><span style="color: #0000ff;"><strong>3、生态至上</strong></span></pre>
+</div>
+<p>　　鸿蒙系统已然开源，也是以打通手机、电脑等多种硬件，兼容安卓与全部的 Web 应用，实现软硬件平台一体化为基础。</p>
+<p>　　最重要的就是第三条，<span style="color: #0000ff;"><strong>生态至上</strong></span>，对于刚刚发布的鸿蒙OS来说，快速建立生态也是目前最大的考验，这也将决定鸿蒙能走得多远。</p>
+<p>　　希望华为可以快速发展，不断攻坚克难，走向高峰。</p>
+<p>&nbsp;</p>
+</div>
+</div>
